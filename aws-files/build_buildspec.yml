@@ -5,6 +5,7 @@ phases:
     runtime-versions:
       java: corretto17
     commands:
+      - echo "Hello, World!"
       - cp ./settings.xml /root/.m2/settings.xml
       - export CODEARTIFACT_AUTH_TOKEN=$(aws codeartifact get-authorization-token --domain ArtifactDomain --domain-owner ID --region REGION --query authorizationToken --output text)
   
@@ -24,3 +25,4 @@ artifacts:
   files:
     - target/**/*.war
   discard-paths: yes
+
