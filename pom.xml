@@ -3,6 +3,7 @@
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
+
     <groupId>com.example</groupId>
     <artifactId>example-app</artifactId>
     <version>1.0.0</version>
@@ -82,14 +83,6 @@
         </dependency>
     </dependencies>
 
-    <repositories>
-        <repository>
-            <id>codeartifact</id>
-            <name>codeartifact</name>
-            <url>https://visualpath-515966512945.d.codeartifact.us-east-1.amazonaws.com/maven/maven-central-store/</url>
-        </repository>
-    </repositories>
-
     <build>
         <plugins>
             <!-- Compiler Plugin -->
@@ -107,6 +100,7 @@
             <plugin>
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-maven-plugin</artifactId>
+                <version>3.1.5</version> <!-- Specify version explicitly -->
             </plugin>
 
             <!-- WAR Packaging -->
@@ -120,4 +114,20 @@
             </plugin>
         </plugins>
     </build>
+
+    <repositories>
+        <!-- Spring Plugins Repository -->
+        <repository>
+            <id>spring-plugins</id>
+            <name>Spring Plugins</name>
+            <url>https://repo.spring.io/plugins-release/</url>
+        </repository>
+
+        <!-- Custom CodeArtifact Repository -->
+        <repository>
+            <id>codeartifact</id>
+            <name>CodeArtifact</name>
+            <url>https://visualpath-515966512945.d.codeartifact.us-east-1.amazonaws.com/maven/maven-central-store/</url>
+        </repository>
+    </repositories>
 </project>
