@@ -96,14 +96,14 @@
                 </configuration>
             </plugin>
 
-            <!-- Spring Boot Plugin -->
+            <!-- Spring Boot Plugin (explicit version) -->
             <plugin>
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-maven-plugin</artifactId>
-                <version>3.1.5</version> <!-- Specify version explicitly -->
+                <version>3.1.5</version>
             </plugin>
 
-            <!-- WAR Packaging -->
+            <!-- WAR Packaging Plugin -->
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-war-plugin</artifactId>
@@ -123,11 +123,20 @@
             <url>https://repo.spring.io/plugins-release/</url>
         </repository>
 
-        <!-- Custom CodeArtifact Repository -->
+        <!-- AWS CodeArtifact Repository -->
         <repository>
             <id>codeartifact</id>
             <name>CodeArtifact</name>
             <url>https://visualpath-515966512945.d.codeartifact.us-east-1.amazonaws.com/maven/maven-central-store/</url>
         </repository>
     </repositories>
+
+    <pluginRepositories>
+        <!-- AWS CodeArtifact Plugin Repository (if needed) -->
+        <pluginRepository>
+            <id>codeartifact-plugins</id>
+            <url>https://visualpath-515966512945.d.codeartifact.us-east-1.amazonaws.com/maven/maven-central-store/</url>
+        </pluginRepository>
+    </pluginRepositories>
+
 </project>
